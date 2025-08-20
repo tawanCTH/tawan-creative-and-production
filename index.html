@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAWAN - Tawan Creative & Production Co., Ltd.</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/tawanCTH/workflowtawan/refs/heads/main/Artboard%201%20copy%402x.png" type="image/png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #040813; /* Deep Navy from image */
+            color: #F3F4F6; /* Off-white text */
+        }
+        .bg-primary { background-color: #040813; }
+        .bg-secondary { background-color: #111827; } /* Slightly lighter dark blue */
+        .text-gold { color: #D1A14D; }
+        .border-gold { border-color: #D1A14D; }
+        .accent-gold { background-color: #D1A14D; }
+        .section-padding { padding: 4rem 1rem; }
+        @media (min-width: 768px) {
+            .section-padding { padding: 6rem 2rem; }
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #D1A14D;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .client-logo {
+            max-height: 60px; /* Set a max-height for consistency */
+            width: auto;
+            border-radius: 0.15rem; /* Add rounded corners to match the theme */
+            transition: all 0.3s ease;
+        }
+        .client-logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Animation Styles */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-400 { transition-delay: 400ms; }
+        .delay-600 { transition-delay: 600ms; }
+    </style>
+</head>
+<body class="bg-primary">
+
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-primary/80 backdrop-blur-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center space-x-2">
+                    <svg class="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <span class="text-2xl font-bold text-white">TAWAN</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-white hover:text-gold">About Us</a>
+                    <a href="#services" class="nav-link text-white hover:text-gold">Services</a>
+                    <a href="#clients" class="nav-link text-white hover:text-gold">Our Clients</a>
+                    <a href="#contact" class="nav-link text-white hover:text-gold">Contact</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#about" class="block py-2 px-4 text-sm text-white hover:bg-secondary">About Us</a>
+            <a href="#services" class="block py-2 px-4 text-sm text-white hover:bg-secondary">Services</a>
+            <a href="#clients" class="block py-2 px-4 text-sm text-white hover:bg-secondary">Our Clients</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-white hover:bg-secondary">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center text-center section-padding">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style="background-image: url('https://images.unsplash.com/photo-1578041334999-03537781a5a2?q=80&w=2070&auto=format&fit=crop');"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
+            <div class="relative z-10 max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 animate-on-scroll">
+                    <span class="text-gold">Comprehensive Media and Marketing Solutions</span> to Elevate Your Brand
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 mb-8 animate-on-scroll delay-200">
+                    Tawan Creative & Production Co., Ltd.
+                </p>
+                <a href="#contact" class="accent-gold text-primary font-bold py-3 px-8 hover:bg-yellow-500 transition duration-300 animate-on-scroll delay-400 rounded-lg">
+                    Get In Touch
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section-padding bg-secondary">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1 animate-on-scroll">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">About Us</h2>
+                        <div class="w-24 h-1 accent-gold mb-6"></div>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                           Tawan Creative & Production Co., Ltd. is a full-service media and marketing agency, founded by a team of experienced professionals specializing in public relations media production, creative media design, and online marketing.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                           Our goal is to support both government and private organizations in building a distinctive brand image, delivering effective communication, and enhancing business capabilities.
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 animate-on-scroll delay-200">
+                        <img src="https://raw.githubusercontent.com/tawanCTH/workflowtawan/refs/heads/main/02%402x.png" 
+                             alt="TAWAN Company Profile Image" 
+                             class="shadow-2xl w-full h-auto object-cover rounded-lg"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/0d1b2a/c89c3c?text=TAWAN+Production';">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-primary">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">Our Services</h2>
+                <p class="max-w-2xl mx-auto text-gray-400 mb-12 animate-on-scroll delay-200">At Tawan Creative & Production, we are committed to delivering high-quality media and marketing solutions. Our services cover the entire process—from analysis, planning, and creative development to production and distribution—tailored to meet the needs of both government and private sector organizations.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-secondary p-8 border border-gray-800 hover:border-gold hover:-translate-y-2 transition-all duration-300 animate-on-scroll rounded-lg">
+                        <h3 class="text-xl font-bold text-gold mb-3">Video Production</h3>
+                        <p class="text-gray-400 text-sm">We create high-quality videos that powerfully communicate your brand story, including corporate videos, commercials, VTRs, product launches, short documentaries, and online content. Our professional team manages every step, from concept development and filming to editing and post-production.</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-secondary p-8 border border-gray-800 hover:border-gold hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-200 rounded-lg">
+                        <h3 class="text-xl font-bold text-gold mb-3">Creative Design</h3>
+                        <p class="text-gray-400 text-sm">We design impactful media that reflects the identity and uniqueness of your organization. Our services cover logos, graphics, websites, mobile applications, print media, and online content, ensuring designs that are visually appealing, practical, and effective in building strong brand recognition.</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-secondary p-8 border border-gray-800 hover:border-gold hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-400 rounded-lg">
+                        <h3 class="text-xl font-bold text-gold mb-3">Digital Solutions</h3>
+                        <p class="text-gray-400 text-sm">We develop and design websites, mobile applications, and online systems that are modern, user-friendly, and aligned with business needs. Our solutions not only enhance functionality but also serve as effective marketing tools that drive measurable results.</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-secondary p-8 border border-gray-800 hover:border-gold hover:-translate-y-2 transition-all duration-300 animate-on-scroll delay-600 rounded-lg">
+                        <h3 class="text-xl font-bold text-gold mb-3">Online Marketing</h3>
+                        <p class="text-gray-400 text-sm">We provide end-to-end digital marketing strategies, including audience analysis, content creation, campaign management, and digital advertising.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Clients Section -->
+        <section id="clients" class="section-padding bg-secondary">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-12 animate-on-scroll">Our Clients</h2>
+                <div class="max-w-6xl mx-auto grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-8 gap-y-10 items-center justify-center animate-on-scroll delay-200">
+                    <!-- Client Logos from GitHub -->
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/1.webp" alt="Client Logo 1" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/2.webp" alt="Client Logo 2" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/3.webp" alt="Client Logo 3" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/4.webp" alt="Client Logo 4" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/5.webp" alt="Client Logo 5" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/6.webp" alt="Client Logo 6" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/7.webp" alt="Client Logo 7" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/8.webp" alt="Client Logo 8" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/9.webp" alt="Client Logo 9" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/10.webp" alt="Client Logo 10" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/11.webp" alt="Client Logo 11" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/12.webp" alt="Client Logo 12" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/13.webp" alt="Client Logo 13" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/14.webp" alt="Client Logo 14" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/15.webp" alt="Client Logo 15" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/16.webp" alt="Client Logo 16" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/17.webp" alt="Client Logo 17" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/18.webp" alt="Client Logo 18" class="client-logo mx-auto">
+                    <img src="https://raw.githubusercontent.com/tawanCTH/tawan-creative-and-production/refs/heads/main/ourclients/19.webp" alt="Client Logo 19" class="client-logo mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-primary">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-on-scroll">Contact Us</h2>
+                <p class="text-gray-400 mb-8 animate-on-scroll delay-200">Ready to create your story? Let's get in touch.</p>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 text-lg animate-on-scroll delay-400">
+                    <div class="text-center">
+                        <h4 class="font-bold text-gold">Phone Number</h4>
+                        <a href="tel:+66912987623" class="text-white hover:text-gold transition-colors">(+66) 91-298-7623 (Net)</a>
+                    </div>
+                    <div class="hidden md:block border-l border-gray-600 h-10"></div>
+                    <div class="text-center">
+                        <h4 class="font-bold text-gold">Email Address</h4>
+                        <a href="mailto:tawan.creativehouse@gmail.com" class="text-white hover:text-gold transition-colors">tawan.creativehouse@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary py-6">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>&copy; <span id="current-year"></span> Tawan Creative & Production Co., Ltd. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            const yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+
+            // Animation on scroll observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            elementsToAnimate.forEach(el => {
+                observer.observe(el);
+            });
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Add shadow to header on scroll
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-lg');
+                } else {
+                    header.classList.remove('shadow-lg');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
